@@ -20,6 +20,7 @@ export function Footer() {
             <div className="flex items-center gap-3 mb-6">
               <img 
                 data-pimer-bind="config-tienda.logo" 
+                data-original-src="/logo.png"
                 src="/logo.png" 
                 alt="Mil Hojas Logo" 
                 onError={(e) => {
