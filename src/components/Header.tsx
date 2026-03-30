@@ -35,19 +35,8 @@ export function Header() {
           <a href="#home" className="flex items-center gap-2 z-50">
             <img 
               data-pimer-bind="config-tienda.logo" 
-              data-original-src="/logo.png"
               src="/logo.png" 
               alt="Mil Hojas Logo" 
-              onError={(e) => {
-                const target = e.target as HTMLImageElement;
-                const original = target.getAttribute('data-original-src');
-                if (original) {
-                  const originalUrl = new URL(original, window.location.origin).href;
-                  if (target.src !== originalUrl) {
-                    target.src = original;
-                  }
-                }
-              }}
               className="w-12 h-12 object-contain bg-white rounded-full p-0.5 shadow-sm" 
             />
             <span data-pimer-bind="config-tienda.nombre_tienda" className={`font-playfair font-bold text-xl ${isScrolled ? 'text-dark' : 'text-dark md:text-white'}`}>

@@ -20,19 +20,8 @@ export function Footer() {
             <div className="flex items-center gap-3 mb-6">
               <img 
                 data-pimer-bind="config-tienda.logo" 
-                data-original-src="/logo.png"
                 src="/logo.png" 
                 alt="Mil Hojas Logo" 
-                onError={(e) => {
-                  const target = e.target as HTMLImageElement;
-                  const original = target.getAttribute('data-original-src');
-                  if (original) {
-                    const originalUrl = new URL(original, window.location.origin).href;
-                    if (target.src !== originalUrl) {
-                      target.src = original;
-                    }
-                  }
-                }}
                 className="w-16 h-16 object-contain bg-white rounded-full p-1 shadow-lg shadow-primary/30" 
               />
               <span data-pimer-bind="config-tienda.nombre_tienda" className="font-playfair font-bold text-2xl tracking-wide">
