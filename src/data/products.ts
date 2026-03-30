@@ -74,14 +74,6 @@ export const products = [
     category: 'tortas',
     image: '/images/img22.jpg',
   },
-  {
-    id: 't-crea',
-    name: '¡Crea Tu Torta!',
-    price: 18000,
-    description: 'Libre elección de bizcocho, relleno y toppings.',
-    category: 'tortas',
-    image: '/images/img23.jpg',
-  },
   // ¡Crea tu torta!
   {
     id: 't-crea',
