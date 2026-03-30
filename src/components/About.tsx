@@ -14,7 +14,7 @@ export function About() {
           >
             <div className="relative rounded-3xl overflow-hidden shadow-2xl">
               <img
-                src="/images/duena-pasteleria.jpg"
+                src="/images/dueña-pasteleria-1000-hojas.jpg"
                 alt="Nuestra Historia"
                 className="w-full h-full object-cover aspect-[4/5]"
                 loading="lazy"

@@ -36,7 +36,7 @@ export function Header() {
             <img 
               data-pimer-bind="config-tienda.logo" 
               data-original-src="/logo.png"
-              src="/logo.png" 
+              src="/images/logo-1000-hojas.png" 
               alt="Mil Hojas Logo" 
               onError={(e) => {
                 const target = e.target as HTMLImageElement;
