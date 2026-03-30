@@ -34,6 +34,13 @@ export function ProductCard({ product }: ProductCardProps) {
           data-pimer-bind={`producto-${product.id}.imagen`}
           src={product.image}
           alt={product.name}
+          onError={(e) => {
+            const target = e.target as HTMLImageElement;
+            // Si la imagen falla (ej. Pimer inyecta una URL vacía o rota), usamos la local
+            if (!target.src.includes(product.image)) {
+              target.src = product.image;
+            }
+          }}
           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
           loading="lazy"
           referrerPolicy="no-referrer"

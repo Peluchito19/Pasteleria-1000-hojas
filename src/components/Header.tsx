@@ -33,7 +33,16 @@ export function Header() {
       >
         <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
           <a href="#home" className="flex items-center gap-2 z-50">
-            <img data-pimer-bind="config-tienda.logo" src="/logo.png" alt="Mil Hojas Logo" className="w-12 h-12 object-contain bg-white rounded-full p-0.5 shadow-sm" />
+            <img 
+              data-pimer-bind="config-tienda.logo" 
+              src="/logo.png" 
+              alt="Mil Hojas Logo" 
+              onError={(e) => {
+                const target = e.target as HTMLImageElement;
+                if (!target.src.includes('/logo.png')) target.src = '/logo.png';
+              }}
+              className="w-12 h-12 object-contain bg-white rounded-full p-0.5 shadow-sm" 
+            />
             <span data-pimer-bind="config-tienda.nombre_tienda" className={`font-playfair font-bold text-xl ${isScrolled ? 'text-dark' : 'text-dark md:text-white'}`}>
               Mil Hojas
             </span>

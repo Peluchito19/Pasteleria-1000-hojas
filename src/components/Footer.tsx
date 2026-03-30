@@ -18,7 +18,16 @@ export function Footer() {
           {/* Brand */}
           <div className="flex flex-col items-center md:items-start text-center md:text-left">
             <div className="flex items-center gap-3 mb-6">
-              <img data-pimer-bind="config-tienda.logo" src="/logo.png" alt="Mil Hojas Logo" className="w-16 h-16 object-contain bg-white rounded-full p-1 shadow-lg shadow-primary/30" />
+              <img 
+                data-pimer-bind="config-tienda.logo" 
+                src="/logo.png" 
+                alt="Mil Hojas Logo" 
+                onError={(e) => {
+                  const target = e.target as HTMLImageElement;
+                  if (!target.src.includes('/logo.png')) target.src = '/logo.png';
+                }}
+                className="w-16 h-16 object-contain bg-white rounded-full p-1 shadow-lg shadow-primary/30" 
+              />
               <span data-pimer-bind="config-tienda.nombre_tienda" className="font-playfair font-bold text-2xl tracking-wide">
                 Mil Hojas
               </span>

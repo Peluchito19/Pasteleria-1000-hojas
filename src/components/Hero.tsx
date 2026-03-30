@@ -9,6 +9,12 @@ export function Hero() {
           data-pimer-bind="hero.imagen"
           src="https://images.unsplash.com/photo-1542826438-bd32f43d626f?auto=format&fit=crop&q=80&w=2000"
           alt="Pastelería 1000 Hojas"
+          onError={(e) => {
+            const target = e.target as HTMLImageElement;
+            if (!target.src.includes('images.unsplash.com')) {
+              target.src = "https://images.unsplash.com/photo-1542826438-bd32f43d626f?auto=format&fit=crop&q=80&w=2000";
+            }
+          }}
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-dark/60" />
