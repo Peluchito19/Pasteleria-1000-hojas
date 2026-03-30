@@ -37,9 +37,13 @@ export function ProductCard({ product }: ProductCardProps) {
           alt={product.name}
           onError={(e) => {
             const target = e.target as HTMLImageElement;
-            if (target.getAttribute('data-fallback-applied') === 'true') return;
-            target.setAttribute('data-fallback-applied', 'true');
-            target.src = product.image;
+            const original = target.getAttribute('data-original-src');
+            if (original) {
+              const originalUrl = new URL(original, window.location.origin).href;
+              if (target.src !== originalUrl) {
+                target.src = original;
+              }
+            }
           }}
           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
           loading="lazy"

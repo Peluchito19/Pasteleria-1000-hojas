@@ -25,9 +25,13 @@ export function Footer() {
                 alt="Mil Hojas Logo" 
                 onError={(e) => {
                   const target = e.target as HTMLImageElement;
-                  if (target.getAttribute('data-fallback-applied') === 'true') return;
-                  target.setAttribute('data-fallback-applied', 'true');
-                  target.src = '/logo.png';
+                  const original = target.getAttribute('data-original-src');
+                  if (original) {
+                    const originalUrl = new URL(original, window.location.origin).href;
+                    if (target.src !== originalUrl) {
+                      target.src = original;
+                    }
+                  }
                 }}
                 className="w-16 h-16 object-contain bg-white rounded-full p-1 shadow-lg shadow-primary/30" 
               />

@@ -43,9 +43,11 @@ export default function App() {
           // Si Pimer vació el src o puso un valor inválido
           if (!currentSrc || currentSrc === 'null' || currentSrc === 'undefined' || currentSrc === '' || currentSrc.includes('undefined') || currentSrc.includes('null')) {
             const originalSrc = img.getAttribute('data-original-src');
-            if (originalSrc && img.getAttribute('data-fallback-applied') !== 'true') {
-              img.setAttribute('data-fallback-applied', 'true');
-              img.setAttribute('src', originalSrc);
+            if (originalSrc) {
+              const originalUrl = new URL(originalSrc, window.location.origin).href;
+              if (img.src !== originalUrl) {
+                img.setAttribute('src', originalSrc);
+              }
             }
           }
         }
@@ -65,9 +67,11 @@ export default function App() {
       const target = e.target as HTMLImageElement;
       if (target && target.tagName === 'IMG') {
         const originalSrc = target.getAttribute('data-original-src');
-        if (originalSrc && target.getAttribute('data-fallback-applied') !== 'true') {
-          target.setAttribute('data-fallback-applied', 'true');
-          target.src = originalSrc;
+        if (originalSrc) {
+          const originalUrl = new URL(originalSrc, window.location.origin).href;
+          if (target.src !== originalUrl) {
+            target.src = originalSrc;
+          }
         }
       }
     };
