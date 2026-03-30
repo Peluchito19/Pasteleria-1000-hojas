@@ -41,9 +41,10 @@ export default function App() {
           const currentSrc = img.getAttribute('src');
           
           // Si Pimer vació el src o puso un valor inválido
-          if (!currentSrc || currentSrc === 'null' || currentSrc === 'undefined' || currentSrc === '') {
+          if (!currentSrc || currentSrc === 'null' || currentSrc === 'undefined' || currentSrc === '' || currentSrc.includes('undefined') || currentSrc.includes('null')) {
             const originalSrc = img.getAttribute('data-original-src');
-            if (originalSrc) {
+            if (originalSrc && img.getAttribute('data-fallback-applied') !== 'true') {
+              img.setAttribute('data-fallback-applied', 'true');
               img.setAttribute('src', originalSrc);
             }
           }
@@ -58,9 +59,25 @@ export default function App() {
       attributeFilter: ['src']
     });
 
+    // 3. Global Image Error Listener
+    // Catches any image that fails to load globally (e.g. 404 from Pimer)
+    const handleImageError = (e: ErrorEvent) => {
+      const target = e.target as HTMLImageElement;
+      if (target && target.tagName === 'IMG') {
+        const originalSrc = target.getAttribute('data-original-src');
+        if (originalSrc && target.getAttribute('data-fallback-applied') !== 'true') {
+          target.setAttribute('data-fallback-applied', 'true');
+          target.src = originalSrc;
+        }
+      }
+    };
+
+    window.addEventListener('error', handleImageError, true); // true for capture phase
+
     return () => {
       lenis.destroy();
       observer.disconnect();
+      window.removeEventListener('error', handleImageError, true);
     };
   }, []);
 

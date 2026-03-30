@@ -12,9 +12,9 @@ export function Hero() {
           alt="Pastelería 1000 Hojas"
           onError={(e) => {
             const target = e.target as HTMLImageElement;
-            if (!target.src.includes('images.unsplash.com')) {
-              target.src = "https://images.unsplash.com/photo-1542826438-bd32f43d626f?auto=format&fit=crop&q=80&w=2000";
-            }
+            if (target.getAttribute('data-fallback-applied') === 'true') return;
+            target.setAttribute('data-fallback-applied', 'true');
+            target.src = "https://images.unsplash.com/photo-1542826438-bd32f43d626f?auto=format&fit=crop&q=80&w=2000";
           }}
           className="w-full h-full object-cover"
         />

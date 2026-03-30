@@ -37,9 +37,9 @@ export function ProductCard({ product }: ProductCardProps) {
           alt={product.name}
           onError={(e) => {
             const target = e.target as HTMLImageElement;
-            if (!target.src.includes(product.image)) {
-              target.src = product.image;
-            }
+            if (target.getAttribute('data-fallback-applied') === 'true') return;
+            target.setAttribute('data-fallback-applied', 'true');
+            target.src = product.image;
           }}
           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
           loading="lazy"
