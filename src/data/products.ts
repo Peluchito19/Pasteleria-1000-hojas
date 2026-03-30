@@ -9,14 +9,14 @@ export const categories = [
 ];
 
 export const products = [
-  // TORTAS (nombres originales, imágenes únicas y orden solicitado)
+  // TORTAS (orden y fotos exactos del usuario)
   {
     id: 't-milhojas',
     name: 'Torta Mil Hojas',
     price: 15000,
     description: 'Mil hojas, relleno de manjar, finalizado con capa de chocolate.',
     category: 'tortas',
-    image: '/images/te-variadades.jpg',
+    image: '/images/img12.jpg',
   },
   {
     id: 't-manjarnuez',
@@ -24,7 +24,7 @@ export const products = [
     price: 15000,
     description: 'Bizcocho de vainilla, relleno de manjar, nueces y crema.',
     category: 'tortas',
-    image: '/images/img22.jpg',
+    image: '/images/img13.jpg',
   },
   {
     id: 't-cuatroleches',
@@ -32,7 +32,7 @@ export const products = [
     price: 18000,
     description: 'Bizcocho de vainilla, remojada en tres leches y relleno de manjar.',
     category: 'tortas',
-    image: '/images/img21.jpg',
+    image: '/images/img14.jpg',
   },
   {
     id: 't-hojarasca',
@@ -40,7 +40,7 @@ export const products = [
     price: 15000,
     description: 'Discos de hojarascas con relleno de manjar y opcional crema pastelera.',
     category: 'tortas',
-    image: '/images/img20.jpg',
+    image: '/images/img15.jpg',
   },
   {
     id: 't-pina',
@@ -56,7 +56,7 @@ export const products = [
     price: 20000,
     description: 'Discos de panqueque vainilla relleno de crema de naranja.',
     category: 'tortas',
-    image: '/images/img15.jpg',
+    image: '/images/img20.jpg',
   },
   {
     id: 't-chocolate',
@@ -64,7 +64,7 @@ export const products = [
     price: 20000,
     description: 'Discos de panqueque vainilla relleno de ganache de chocolate.',
     category: 'tortas',
-    image: '/images/img14.jpg',
+    image: '/images/img21.jpg',
   },
   {
     id: 't-selvanegra',
@@ -72,7 +72,7 @@ export const products = [
     price: 18000,
     description: 'Bizcocho de chocolate relleno de mermelada de frambuesa y crema chantilly.',
     category: 'tortas',
-    image: '/images/img13.jpg',
+    image: '/images/img22.jpg',
   },
   {
     id: 't-crea',
@@ -81,14 +81,6 @@ export const products = [
     description: 'Libre elección de bizcocho, relleno y toppings.',
     category: 'tortas',
     image: '/images/img23.jpg',
-  },
-  {
-    id: 't-especial',
-    name: 'Torta Especial',
-    price: 18000,
-    description: 'Torta especial de la casa.',
-    category: 'tortas',
-    image: '/images/img12.jpg',
   },
   // ¡Crea tu torta!
   {
