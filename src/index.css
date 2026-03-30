@@ -41,3 +41,10 @@
 ::-webkit-scrollbar-thumb:hover {
   background: var(--color-dark);
 }
+
+/* Pimer Scroll Reveal Override */
+/* Pimer's scroll reveal conflicts with React/Lenis and hides images permanently */
+.pimer-scroll-reveal {
+  opacity: 1 !important;
+  transform: none !important;
+}

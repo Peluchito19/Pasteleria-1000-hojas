@@ -1,0 +1,14 @@
+const https = require('https');
+
+https.get('https://pimer.vercel.app/pimer.js', (res) => {
+  let data = '';
+  res.on('data', (chunk) => data += chunk);
+  res.on('end', () => {
+    const lines = data.split('\n');
+    lines.forEach((line, i) => {
+      if (line.includes('IntersectionObserver')) {
+        console.log(`Line ${i}: ${line}`);
+      }
+    });
+  });
+}).on('error', (err) => console.error(err));
