@@ -31,23 +31,10 @@ export function ProductCard({ product }: ProductCardProps) {
     >
       <div className="relative h-48 sm:h-56 overflow-hidden">
         <img
-          data-pimer-bind={`producto-${product.id}.imagen`}
-          data-original-src={product.image}
           src={product.image}
           alt={product.name}
-          onError={(e) => {
-            const target = e.target as HTMLImageElement;
-            const original = target.getAttribute('data-original-src');
-            if (original) {
-              const originalUrl = new URL(original, window.location.origin).href;
-              if (target.src !== originalUrl) {
-                target.src = original;
-              }
-            }
-          }}
           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
           loading="lazy"
-          referrerPolicy="no-referrer"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-dark/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
       </div>
