@@ -36,7 +36,6 @@ export function Location() {
               style={{ border: 0 }}
               allowFullScreen
               loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
               title="Ubicación Pastelería 1000 Hojas"
               className="absolute inset-0 grayscale hover:grayscale-0 transition-all duration-500"
             />

@@ -7,19 +7,8 @@ export function Hero() {
       <div className="absolute inset-0 z-0">
         <img
           data-pimer-bind="hero.imagen"
-          data-original-src="https://images.unsplash.com/photo-1542826438-bd32f43d626f?auto=format&fit=crop&q=80&w=2000"
-          src="https://images.unsplash.com/photo-1542826438-bd32f43d626f?auto=format&fit=crop&q=80&w=2000"
+          src="/images/duena-pasteleria.jpg"
           alt="Pastelería 1000 Hojas"
-          onError={(e) => {
-            const target = e.target as HTMLImageElement;
-            const original = target.getAttribute('data-original-src');
-            if (original) {
-              const originalUrl = new URL(original, window.location.origin).href;
-              if (target.src !== originalUrl) {
-                target.src = original;
-              }
-            }
-          }}
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-dark/60" />

@@ -18,7 +18,6 @@ export function About() {
                 alt="Nuestra Historia"
                 className="w-full h-full object-cover aspect-[4/5]"
                 loading="lazy"
-                referrerPolicy="no-referrer"
               />
               <div className="absolute inset-0 bg-dark/20" />
             </div>
